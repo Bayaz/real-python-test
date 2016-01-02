@@ -1,5 +1,9 @@
- #python specific 
+#Virtualenv
+#python specific 
 *.pyc 
+**\rptenv*
+**\tprojectenv*
+
 
 ## generic files to ignore 
 *~ 
