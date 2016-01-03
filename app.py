@@ -9,11 +9,11 @@ app = Flask(__name__)
 #error handling ...dont have to restart server to see changes now..just refresh browser
 app.config["DEBUG"] = True
 
-#Step 3 use decorators to link the function to a url
+#Step 3 use decorators to link the function to a url making static routes, functions for static routes must come before dynamic routes
 @app.route("/")
 @app.route("/hello")
 
-#Step 4 define a view using a function that returns a string !!!!! this has to come after static routes won't work after dynamic ones
+#Step 4 define a view using a function that returns a string !
 def hello_world():
     return "Hello, World!?!?!?!?!?"
 
@@ -39,6 +39,7 @@ def path_type(value):
 	print(value)
 	return "correct"
 
+#200 is not required....flask automatically does this for us
 @app.route("/name/<name>")
 def index(name):
 	if name.lower() == "michael":
