@@ -1,7 +1,7 @@
 #csvtest.py
 #import data from CSV
 
-#import the csb library
+#import the csv library
 import csv
 import sqlite3
 
@@ -16,3 +16,6 @@ with sqlite3.connect("new.db") as conn:
 
 	#insert data from csv file into database
 	c.executemany("INSERT INTO employees(firstname, lastname) values (?, ?)", employees)
+
+#close the databse
+conn.close

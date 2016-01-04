@@ -1,7 +1,4 @@
-
-# executemany() method
-
-
+# mass updates with executemany() method
 import sqlite3
 
 with sqlite3.connect("new.db") as connection:
@@ -15,5 +12,8 @@ with sqlite3.connect("new.db") as connection:
             ('Phoenix', 'AZ', 1500000)
              ]
 
-    # insert data into table !!! SPACING...c.execute algined with cities not 0!
+    # insert data into table !!! SPACING !!!...c.execute algined with cities not 0!
     c.executemany('INSERT INTO population VALUES(?, ?, ?)', cities)
+
+#close the databse
+conn.close
